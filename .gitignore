@@ -1,0 +1,16 @@
+# Dependencias (lo más pesado)
+node_modules/
+
+# Archivos de construcción (donde se genera la web final)
+dist/
+build/
+
+# Cache de Astro y herramientas de VS Code
+.astro/
+.vercel/
+.vscode/
+.env
+
+# Archivos de sistema
+.DS_Store
+thumbs.db

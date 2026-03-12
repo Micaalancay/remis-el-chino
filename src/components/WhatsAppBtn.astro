@@ -1,0 +1,27 @@
+---
+const phone = "549387XXXXXXX"; // Reemplazá por el número de tu hermano (con código de área)
+const message = encodeURIComponent("Hola Aldineho! Vengo de tu web y quería consultar por un traslado.");
+const whatsappLink = `https://wa.me/${phone}?text=${message}`;
+---
+
+<a 
+  href={whatsappLink} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-50 bg-[#25d366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+  title="Consultar por WhatsApp"
+>
+  <span class="text-3xl">💬</span>
+</a>
+
+<style>
+  /* Un pequeño efecto de pulso para que llame la atención */
+  a {
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Aldineho | Traslados Salta y Jujuy" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>{title}</title>
+    <meta name="description" content="Traslados privados en Salta y Jujuy. Viajes al Aeropuerto, Salinas Grandes, Hornocal y más. Servicio profesional 24hs." />
+    <meta name="keywords" content="traslados salta, transfer aeropuerto salta, excursiones jujuy, purmamarca, hornocal, salinas grandes" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Servicio de traslados y excursiones privadas en el Norte Argentino." />
+    <meta property="og:image" content="/og-image.jpg" /> <link rel="canonical" href="https://aldineho.com" />
+  </head>
+
+  <body class="bg-gray-50 text-slate-900 selection:bg-orange-100">
+    <nav class="flex gap-4 px-6 py-2 justify-end text-sm font-bold bg-slate-100 border-b border-slate-200">
+      <a href="/" class="text-slate-600 hover:text-orange-600 transition">🇦🇷 ES</a>
+      <span class="text-slate-300">|</span>
+      <a href="/en/" class="text-slate-600 hover:text-orange-600 transition">🇺🇸 EN</a>
+    </nav>
+
+    <slot /> </body>
+</html>
