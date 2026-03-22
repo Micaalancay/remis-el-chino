@@ -1,21 +1,32 @@
-<section class="py-20 px-6 max-w-3xl mx-auto">
-  <h2 class="text-3xl font-black text-center mb-12">Preguntas Frecuentes</h2>
-  <div class="space-y-4">
-    {[
-      { q: "¿Cómo reservo mi lugar?", a: "Podés reservar completando el formulario o directamente por WhatsApp. Se requiere una seña del 20%." },
-      { q: "¿Qué pasa si me apuno en el Hornocal?", a: "Nuestros vehículos están equipados con oxígeno y nuestros choferes capacitados para asistirte. Recomendamos mascar hojas de coca o tomar mucha agua." },
-      { q: "¿Aceptan tarjetas de crédito?", a: "Sí, aceptamos tarjetas vía Mercado Pago (con recargo), transferencias bancarias y efectivo." },
-      { q: "¿El servicio es privado o compartido?", a: "Todos nuestros servicios son exclusivamente privados, garantizando tu comodidad y manejo de tiempos." }
-    ].map(item => (
-      <details class="group border border-slate-200 rounded-2xl p-4 cursor-pointer bg-white">
-        <summary class="font-bold text-slate-800 list-none flex justify-between items-center">
-          {item.q}
-          <span class="group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <p class="text-slate-600 mt-4 leading-relaxed border-t border-slate-100 pt-4">
-          {item.a}
-        </p>
-      </details>
-    ))}
+---
+import data from '../data/contenido.json';
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: { title: "Preguntas Frecuentes" },
+  en: { title: "FAQ" }
+}[lang];
+---
+
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-black text-slate-900 mb-12 italic uppercase tracking-tighter text-center">{t.title}</h2>
+    <div class="space-y-4">
+      {data.faqs.map((faq) => (
+        <div class="group border border-slate-100 bg-slate-50 rounded-[2rem] overflow-hidden transition-all hover:border-orange-200">
+          <details class="w-full">
+            <summary class="flex justify-between items-center p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <span class="text-xl font-black text-slate-800 group-open:text-orange-600 italic transition-colors">
+                {faq[lang].q}
+              </span>
+              <span class="text-orange-600 transition-transform group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-8 pb-8 text-slate-600 font-medium">
+              {faq[lang].a}
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

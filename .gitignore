@@ -14,3 +14,8 @@ build/
 # Archivos de sistema
 .DS_Store
 thumbs.db
+
+# Componentes de prueba o copias que no quiero subir
+src/components/copia-quienesomosmos.astro
+src/components/copia2.astro
+src/components/exc.astro

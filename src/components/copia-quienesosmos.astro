@@ -1,17 +1,6 @@
 ---
 const { lang = 'es' } = Astro.props;
 
-// 1. Agregamos el array de fotos (podés mover esto al JSON después)
-const fotos = [
-  "/img/excursiones/aldhineo.webp",
-  "/img/excursiones/humahuaca.webp", 
-  "/img/excursiones/salinas-grandes-jujuy.webp",
-  "/img/excursiones/purmamarca.webp",
-  "/img/quienes-somos/salinas-noche.webp",
-  "/img/quienes-somos/Pueblo-Iruya.webp",
-  "/img/quienes-somos/iruya.webp"
-];
-
 const t = {
   es: {
     badge: "Sobre nosotros",
@@ -30,8 +19,6 @@ const t = {
 }[lang];
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
 <section id="nosotros" class="py-24 px-6 bg-white overflow-hidden">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -42,21 +29,12 @@ const t = {
           <p class="text-[10px] uppercase font-black text-slate-400 tracking-widest mt-1 whitespace-nowrap">{t.stat}</p>
         </div>
 
-        <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500 border-4 border-white bg-slate-100">
-          <div class="swiper swiperNosotros w-full h-[500px]">
-            <div class="swiper-wrapper">
-              {fotos.map(foto => (
-                <div class="swiper-slide">
-                  <img 
-                    src={foto} 
-                    alt="Aldhineo Experiencia" 
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-            <div class="swiper-pagination !bottom-4"></div>
-          </div>
+        <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+          <img 
+            src="/img/excursiones/aldhineo.webp" 
+            alt="Aldineho Team" 
+            class="w-full h-[500px] object-cover"
+          />
         </div>
 
         <div class="absolute -top-4 -left-4 w-24 h-24 bg-orange-100 rounded-full -z-10 blur-2xl opacity-60"></div>
@@ -91,34 +69,3 @@ const t = {
     </div>
   </div>
 </section>
-
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script is:inline>
-  function loadSwiper() {
-    // Verificamos que Swiper exista y que el elemento esté en el DOM
-    if (typeof Swiper !== 'undefined' && document.querySelector('.swiperNosotros')) {
-      new Swiper('.swiperNosotros', {
-        loop: true,
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true
-        },
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
-    }
-  }
-
-  // Se ejecuta al cargar la página
-  loadSwiper();
-
-  // Se ejecuta si navegas entre páginas (por si usas ViewTransitions)
-  document.addEventListener('astro:after-swap', loadSwiper);
-</script>

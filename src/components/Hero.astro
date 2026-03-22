@@ -1,11 +1,85 @@
-<section class="relative h-[80vh] flex items-center justify-center bg-slate-800 text-white">
-  <div class="absolute inset-0 opacity-50 bg-[url('/ruta-a-foto-camioneta.jpg')] bg-cover bg-center"></div>
-  
-  <div class="relative z-10 text-center px-4">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Traslados Privados en Salta y Jujuy</h1>
-    <p class="text-xl mb-8">Viajá seguro, puntual y con el mejor confort por el NOA.</p>
-    <a href="https://wa.me/tu-numero-aqui" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transition shadow-lg">
-      Consultar Disponibilidad
-    </a>
+---
+// src/components/Hero.astro
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: {
+    location: "Jujuy · Argentina",
+    brand: "Remis El Chino",
+    title_white: "Tu viaje al Norte,",
+    title_orange: "sin preocupaciones.",
+    description: "Traslados privados y excursiones personalizadas. Te buscamos por tu alojamiento y te llevamos a los paisajes más increíbles del país.",
+    btn_primary: "Ver Excursiones",
+    btn_secondary: "Precios de Traslados"
+  },
+  en: {
+    location: "Jujuy · Argentina",
+    brand: "Aldhineo Transfers",
+    title_white: "Your trip to the North,",
+    title_orange: "stress-free.",
+    description: "Private transfers and customized excursions. We pick you up at your accommodation and take you to the most incredible landscapes in the country.",
+    btn_primary: "View Excursions",
+    btn_secondary: "Transfer Rates"
+  }
+}[lang];
+---
+
+<section class="relative bg-slate-900 py-24 md:py-32 px-6 overflow-hidden min-h-[85vh] flex items-center">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px] -z-0"></div>
+  <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[100px] -z-0"></div>
+
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6">
+      <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+      <span class="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.3em]">{t.location}</span>
+    </div>
+
+    <div class="mb-2">
+      <span class="text-orange-600 font-black text-5xl md:text-7xl tracking-tighter italic uppercase drop-shadow-2xl">
+        {t.brand}
+      </span>
+    </div>
+
+    <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tighter">
+      {t.title_white} <br/> 
+      <span class="text-orange-500 italic">{t.title_orange}</span>
+    </h1>
+
+    <p class="text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-medium opacity-80">
+      {t.description}
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="#excursiones" 
+         class="group relative bg-orange-600 hover:bg-orange-500 text-white font-black py-5 px-10 rounded-2xl transition-all shadow-2xl shadow-orange-900/40 overflow-hidden">
+        <span class="relative z-10 uppercase tracking-widest text-sm">{t.btn_primary}</span>
+        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+      </a>
+
+      <a href="#traslados" 
+         class="bg-slate-800 hover:bg-slate-700 text-white border border-white/10 font-black py-5 px-10 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-sm">
+        {t.btn_secondary}
+      </a>
+    </div>
   </div>
+
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
 </section>
+
+<style>
+  /* Animación de entrada */
+  h1, .text-orange-600 {
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(40px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+</style>

@@ -1,0 +1,90 @@
+{
+  "traslados": [
+   { "id": "PUR", "es": "Purmamarca ↔ Jujuy Capital", "en": "Purmamarca ↔ Jujuy City", "precio": "$75.000", "nota_es": "Servicio Puerta a Puerta", "nota_en": "Door to door" },
+  
+    { "id": "JUJ", "es": "Purmamarca ↔ Aeropuerto Jujuy", "en": "Purmamarca ↔ Jujuy Airport", "precio": "$90.000", "nota_es": "Transfer Directo", "nota_en": "Direct Transfer" },
+    { "id": "TIL", "es": "Purmamarca ↔ Tilcara", "en": "Purmamarca ↔ Tilcara", "precio": "$30.000", "nota_es": "Corazón de la Quebrada", "nota_en": "Heart of the Valley" },
+    { "id": "MAI", "es": "Purmamarca ↔ Maimará", "en": "Purmamarca ↔ Maimará", "precio": "$25.000", "nota_es": "Traslado rápido", "nota_en": "Quick transfer" },
+    { "id": "CAP", "es": "Purmamarca ↔ Salta Capital", "en": "Purmamarca ↔ Salta City", "precio": "Consultar", "nota_es": "Centro / Hoteles", "nota_en": "Downtown / Hotels" },
+    { "id": "SLA", "es": "Purmamarca ↔ Aeropuerto Salta", "en": "Purmamarca ↔ Salta Airport", "precio": "Consultar", "nota_es": "Servicio 24hs", "nota_en": "24/7 Service" },
+    { "id": "JAM", "es": "Paso de Jama", "en": "Paso de Jama", "precio": "Consultar", "nota_es": "Frontera Chile", "nota_en": "Chile Border" },
+    { "id": "SUS", "es": "Susques", "en": "Susques", "precio": "Consultar", "nota_es": "Puna Jujeña", "nota_en": "Highlands" }
+  ],
+  "excursiones": {
+    "hornocal": {
+      "precio": "$250.000",
+      "pax": "4",
+      "salida": "08:30 hs",
+      "regreso": "17:30 hs",
+      "duracion": "8-9 horas",
+      "es": {
+        "titulo": "Tour Purmamarca al Hornocal",
+        "tag": "El Cerro de los 14 Colores",
+        "itinerario": [
+          "Huacalera (Trópico de Capricornio)",
+          "Uquía: Iglesia y Ángeles Arcabuceros",
+          "Foto con llamas en Uquía",
+          "Humahuaca: Plaza y Monumento",
+          "Bendición de San Francisco Solano (12:00 hs)",
+          "Mirador del Hornocal (4.350 m.s.n.m.)",
+          "Tiempo libre para almuerzo y compras"
+        ]
+      },
+      "en": {
+        "titulo": "Purmamarca to Hornocal Tour",
+        "tag": "The 14-Colored Mountain",
+        "itinerario": [
+          "Huacalera (Tropic of Capricorn)",
+          "Uquía: Church & Harquebusier Angels",
+          "Photo with llamas in Uquía",
+          "Humahuaca: Square & Monument",
+          "Blessing of St. Francis Solano (12:00 PM)",
+          "Hornocal Viewpoint (14,270 ft)",
+          "Free time for lunch and shopping"
+        ]
+      }
+    },
+    "salinas": {
+      "precio": "$100.000",
+      "pax": "4",
+      "salida": "Mañana o Tarde",
+      "duracion": "4 horas",
+      "es": {
+        "titulo": "Salinas Grandes",
+        "tag": "Espejos de sal y Puna",
+        "itinerario": [
+          "Mirador Cuesta de Lipán",
+          "Abra de Potrerillos (4.170 msnm)",
+          "Piedra 'La Tortuguita'",
+          "Visita a las piletas de sal",
+          "1 hora libre en las Salinas"
+        ]
+      },
+      "en": {
+        "titulo": "Great Salt Flats",
+        "tag": "Salt mirrors and high plains",
+        "itinerario": [
+          "Cuesta de Lipán Viewpoint",
+          "Potrerillos Pass (13,680 ft)",
+          "The 'Little Turtle' Rock",
+          "Salt pools visit",
+          "1 hour free time at the Flats"
+        ]
+      }
+    }
+  },
+  "faqs": [
+    {
+      "es": { "q": "¿Cómo reservo mi lugar?", "a": "Es muy simple: hacés clic en el botón de WhatsApp, nos pasás la fecha y el destino, y coordinamos la reserva en el momento." },
+      "en": { "q": "How do I book?", "a": "It's simple: click the WhatsApp button, send us the date and destination, and we'll coordinate your booking instantly." }
+    },
+    {
+      "es": { "q": "¿Qué medios de pago reciben?", "a": "Efectivo (pesos/dólares) y transferencias bancarias." },
+      "en": { "q": "What payment methods do you accept?", "a": "Cash (ARS/USD) and bank transfers." }
+    },
+    {
+      "es": { "q": "¿El servicio es privado o compartido?", "a": "Todos nuestros servicios son exclusivamente privados, garantizando tu comodidad." },
+      "en": { "q": "Private or shared service?", "a": "All our services are exclusively private, guaranteeing your comfort." }
+    }
+  ]
+}

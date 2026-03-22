@@ -1,0 +1,36 @@
+---
+import data from '../data/contenido.json';
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: { title: "Otros Traslados", contact: "Consultar presupuesto" },
+  en: { title: "Other Transfers", contact: "Request a quote" }
+}[lang];
+---
+
+<section id="traslados" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase italic mb-12">
+      {t.title}
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {data.traslados.map((item) => (
+        <div class="p-8 border border-slate-100 bg-slate-50 rounded-[2.5rem] hover:bg-slate-900 group transition-all">
+          <h4 class="text-xl font-black text-slate-800 group-hover:text-white italic uppercase">
+            {lang === 'es' ? item.es : item.en}
+          </h4>
+          <p class="text-3xl font-black text-slate-900 group-hover:text-orange-500 my-4">
+            {item.precio}
+          </p>
+          <p class="text-xs text-slate-400 font-bold uppercase mb-6">
+            {lang === 'es' ? item.nota_es : item.nota_en}
+          </p>
+          <a href="#contacto" class="text-xs font-black uppercase text-orange-600 group-hover:text-white">
+            {t.contact} →
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
