@@ -18,7 +18,7 @@
       "regreso": "17:30 hs",
       "duracion": "8-9 horas",
       "es": {
-        "titulo": "Tour Purmamarca al Hornocal",
+        "titulo": "Purmamarca al Hornocal",
         "tag": "El Cerro de los 14 Colores",
         "itinerario": [
           "Huacalera (Trópico de Capricornio)",
@@ -31,7 +31,7 @@
         ]
       },
       "en": {
-        "titulo": "Purmamarca to Hornocal Tour",
+        "titulo": "Purmamarca to Hornocal",
         "tag": "The 14-Colored Mountain",
         "itinerario": [
           "Huacalera (Tropic of Capricorn)",
@@ -50,7 +50,7 @@
       "salida": "Mañana o Tarde",
       "duracion": "4 horas",
       "es": {
-        "titulo": "Salinas Grandes",
+        "titulo": "Purmamarca a Salinas Grandes",
         "tag": "Espejos de sal y Puna",
         "itinerario": [
           "Mirador Cuesta de Lipán",
@@ -61,7 +61,7 @@
         ]
       },
       "en": {
-        "titulo": "Great Salt Flats",
+        "titulo": "Purmamarca to Great Salt Flats",
         "tag": "Salt mirrors and high plains",
         "itinerario": [
           "Cuesta de Lipán Viewpoint",

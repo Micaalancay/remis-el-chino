@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Avisamos dónde está el sitemap que instalamos antes
-Sitemap: https://aldineho.com/sitemap-index.xml
+# El sitemap correcto de este proyecto
+Sitemap: https://www.remiselchino.com.ar/sitemap-index.xml

@@ -5,61 +5,90 @@ const { lang = 'es' } = Astro.props;
 const t = {
   es: {
     location: "Jujuy · Argentina",
+    base: "Desde Purmamarca",
     brand: "Remis El Chino",
     title_white: "Tu viaje al Norte,",
     title_orange: "sin preocupaciones.",
     description: "Traslados privados y excursiones personalizadas. Te buscamos por tu alojamiento y te llevamos a los paisajes más increíbles del país.",
+    call_label: "O llamanos directamente:",
+    phone: "388 15-415-3744", 
     btn_primary: "Ver Excursiones",
     btn_secondary: "Precios de Traslados"
   },
   en: {
     location: "Jujuy · Argentina",
+    base: "From Purmamarca",
     brand: "Remis El Chino",
     title_white: "Your trip to the North,",
     title_orange: "stress-free.",
     description: "Private transfers and customized excursions. We pick you up at your accommodation and take you to the most incredible landscapes in the country.",
+    call_label: "Or call us directly:",
+    phone: "388 15-415-3744",
     btn_primary: "View Excursions",
     btn_secondary: "Transfer Rates"
   }
 }[lang];
 ---
 
-<section class="relative bg-slate-900 py-24 md:py-32 px-6 overflow-hidden min-h-[85vh] flex items-center">
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px] -z-0"></div>
-  <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[100px] -z-0"></div>
+<section class="relative bg-slate-900 py-16 md:py-32 px-4 md:px-6 overflow-hidden min-h-[90vh] flex items-center">
+  <div class="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-orange-600/10 rounded-full blur-[80px] md:blur-[120px] -z-0"></div>
+  <div class="absolute bottom-0 left-0 w-[200px] md:w-[300px] h-[200px] md:h-[300px] bg-blue-600/10 rounded-full blur-[70px] md:blur-[100px] -z-0"></div>
 
-  <div class="max-w-6xl mx-auto text-center relative z-10">
-    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6">
-      <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
-      <span class="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.3em]">{t.location}</span>
+  <div class="max-w-6xl mx-auto text-center relative z-10 w-full">
+    
+    <div class="flex flex-col items-center gap-3 mb-8">
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-md px-4 py-2 rounded-full">
+        <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+        <span class="text-white text-[9px] md:text-xs font-black uppercase tracking-[0.2em]">{t.location}</span>
+      </div>
+      <span class="text-orange-500 font-black text-xl md:text-3xl uppercase italic tracking-tighter">
+        {t.base}
+      </span>
     </div>
 
-    <div class="mb-2">
-      <span class="text-orange-600 font-black text-5xl md:text-7xl tracking-tighter italic uppercase drop-shadow-2xl">
+    <div class="mb-4">
+      <span class="text-orange-600 font-black text-4xl md:text-7xl tracking-tighter italic uppercase drop-shadow-2xl block break-words">
         {t.brand}
       </span>
     </div>
 
-    <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tighter">
-      {t.title_white} <br/> 
-      <span class="text-orange-500 italic">{t.title_orange}</span>
+    <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-[1] md:leading-[0.9] tracking-tighter break-words px-2">
+      {t.title_white} <br class="hidden sm:block"/> 
+      <span class="text-orange-500 italic block sm:inline">{t.title_orange}</span>
     </h1>
 
-    <p class="text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-medium opacity-80">
+    <p class="text-base md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium opacity-80 px-2">
       {t.description}
     </p>
 
-    <div class="flex flex-wrap justify-center gap-6">
-      <a href="#excursiones" 
-         class="group relative bg-orange-600 hover:bg-orange-500 text-white font-black py-5 px-10 rounded-2xl transition-all shadow-2xl shadow-orange-900/40 overflow-hidden">
-        <span class="relative z-10 uppercase tracking-widest text-sm">{t.btn_primary}</span>
-        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-      </a>
+    <div class="flex flex-col items-center gap-10">
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 w-full px-4">
+        <a href="#excursiones" 
+           class="group relative bg-orange-600 hover:bg-orange-500 text-white font-black py-4 md:py-5 px-8 md:px-10 rounded-2xl transition-all shadow-2xl shadow-orange-900/40 overflow-hidden w-full sm:w-auto text-center">
+          <span class="relative z-10 uppercase tracking-widest text-xs md:text-sm">{t.btn_primary}</span>
+          <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+        </a>
 
-      <a href="#traslados" 
-         class="bg-slate-800 hover:bg-slate-700 text-white border border-white/10 font-black py-5 px-10 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-sm">
-        {t.btn_secondary}
-      </a>
+        <a href="#traslados" 
+           class="bg-slate-800 hover:bg-slate-700 text-white border border-white/10 font-black py-4 md:py-5 px-8 md:px-10 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-xs md:text-sm w-full sm:w-auto text-center">
+          {t.btn_secondary}
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center gap-3">
+        <p class="text-slate-400 uppercase tracking-[0.2em] text-[10px] md:text-xs font-bold opacity-70">
+          {t.call_label}
+        </p>
+        <a href={`tel:${t.phone.replace(/\s|-/g, '')}`} 
+           class="flex items-center gap-3 text-white hover:text-orange-500 transition-all group">
+          <div class="bg-orange-600 p-3 rounded-xl group-hover:scale-110 transition-transform shadow-lg shadow-orange-600/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span class="text-3xl md:text-5xl font-black tracking-tighter tabular-nums">{t.phone}</span>
+        </a>
+      </div>
+
     </div>
   </div>
 
@@ -67,8 +96,7 @@ const t = {
 </section>
 
 <style>
-  /* Animación de entrada */
-  h1, .text-orange-600 {
+  h1, .text-orange-600, .text-orange-500 {
     animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 

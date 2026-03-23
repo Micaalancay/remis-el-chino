@@ -4,15 +4,18 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   lang?: string;
+  description?: string; // Agregamos descripción opcional por página
 }
 
 const { 
-  title = "Remis El Chino | Traslados y Excursiones en Jujuy", 
-  lang = "es" 
+  lang = "es",
+  title = lang === 'es' ? "Remis El Chino | Traslados y Excursiones en Purmamarca y Jujuy" : "Remis El Chino | Transfers and Excursions in Jujuy",
+  description = lang === 'es' 
+    ? "Remis en Purmamarca y Jujuy. Traslados privados al Aeropuerto, Salinas Grandes y Hornocal. Seguridad y puntualidad en el Norte Argentino."
+    : "Private transfers in Purmamarca and Jujuy. Trips to the Airport, Salinas Grandes and Hornocal. Safety and punctuality in Northern Argentina."
 } = Astro.props;
 
-// Cambiamos la URL base al nuevo dominio
-const siteUrl = "https://remiselchino.com.ar";
+const siteUrl = "https://www.remiselchino.com.ar"; // Asegurate de usar el www si así lo configuramos
 ---
 
 <!doctype html>
@@ -21,17 +24,41 @@ const siteUrl = "https://remiselchino.com.ar";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     
     <title>{title}</title>
-    <meta name="description" content="Remis El Chino: Traslados privados y excursiones personalizadas en Jujuy y Salta. Viajes al Aeropuerto, Salinas Grandes, Hornocal y toda la Quebrada. Seguridad y puntualidad." />
-    <meta name="keywords" content="remis el chino, traslados jujuy, transfer aeropuerto jujuy, excursiones jujuy, purmamarca, hornocal, salinas grandes, remis purmamarca" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="remis purmamarca, remis jujuy, traslados purmamarca, excursiones hornocal, salinas grandes remis, transfer aeropuerto jujuy, taxi purmamarca" />
     
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Viajá seguro con Remis El Chino. Traslados privados en el Norte Argentino." />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}/og-image.jpg`} /> 
     
     <link rel="canonical" href={siteUrl} />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TaxiService",
+        "name": "Remis El Chino",
+        "description": "Servicio de traslados y excursiones en Purmamarca, Jujuy.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Remis El Chino",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Purmamarca",
+            "addressRegion": "Jujuy",
+            "addressCountry": "AR"
+          },
+          "telephone": "+549388154153744"
+        },
+        "areaServed": ["Purmamarca", "Jujuy", "Salta", "Tilcara", "Humahuaca"],
+        "url": "https://www.remiselchino.com.ar"
+      }
+    </script>
   </head>
 
   <body class="bg-gray-50 text-slate-900 selection:bg-orange-500 selection:text-white antialiased">

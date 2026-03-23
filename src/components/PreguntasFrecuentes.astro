@@ -1,4 +1,5 @@
 ---
+// src/components/FAQ.astro
 import data from '../data/contenido.json';
 const { lang = 'es' } = Astro.props;
 
@@ -6,22 +7,41 @@ const t = {
   es: { title: "Preguntas Frecuentes" },
   en: { title: "FAQ" }
 }[lang];
+
+// Preparamos el esquema para Google (JSON-LD)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq[lang].q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq[lang].a
+    }
+  }))
+};
 ---
 
-<section class="py-24 px-6 bg-white">
+<section class="py-16 md:py-24 px-4 md:px-6 bg-white overflow-hidden">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-black text-slate-900 mb-12 italic uppercase tracking-tighter text-center">{t.title}</h2>
-    <div class="space-y-4">
+    <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-10 md:mb-16 italic uppercase tracking-tighter text-center">
+      {t.title}
+    </h2>
+    
+    <div class="space-y-4 md:space-y-6">
       {data.faqs.map((faq) => (
-        <div class="group border border-slate-100 bg-slate-50 rounded-[2rem] overflow-hidden transition-all hover:border-orange-200">
+        <div class="group border border-slate-100 bg-slate-50/50 rounded-[2rem] overflow-hidden transition-all hover:border-orange-200 hover:bg-white hover:shadow-xl hover:shadow-orange-900/5">
           <details class="w-full">
-            <summary class="flex justify-between items-center p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <span class="text-xl font-black text-slate-800 group-open:text-orange-600 italic transition-colors">
+            <summary class="flex justify-between items-center p-6 md:p-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden outline-none">
+              <span class="text-lg md:text-xl font-black text-slate-800 group-open:text-orange-600 italic transition-colors pr-4">
                 {faq[lang].q}
               </span>
-              <span class="text-orange-600 transition-transform group-open:rotate-180">▼</span>
+              <span class="text-orange-600 text-xs transition-transform duration-300 group-open:rotate-180 shrink-0">
+                ▼
+              </span>
             </summary>
-            <div class="px-8 pb-8 text-slate-600 font-medium">
+            <div class="px-6 md:px-8 pb-8 text-slate-600 font-medium text-base md:text-lg leading-relaxed border-t border-slate-100 pt-4 mt-2">
               {faq[lang].a}
             </div>
           </details>
@@ -29,4 +49,13 @@ const t = {
       ))}
     </div>
   </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </section>
+
+<style>
+  /* Removemos el puntito molesto de Safari */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
