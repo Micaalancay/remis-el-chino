@@ -113,8 +113,8 @@ const t = {
     
     // Lógica de mensaje bilingüe
     const mensaje = lang === 'en' 
-      ? `Hello Aldineho! 👋 My name is *${nombre}*. \nI'd like to check availability for a transfer to *${destino}* on *${fechaFormateada}*. We are *${personas}* passengers. \nCould you please send me a quote?`
-      : `Hola Aldineho! 👋 Mi nombre es *${nombre}*. \nMe gustaría consultar la disponibilidad para un traslado a *${destino}* para el día *${fechaFormateada}*. Seríamos *${personas}* pasajeros. \n¿Podrían pasarme el presupuesto?`;
+      ? `Hello Remis El Chino! 👋 My name is *${nombre}*. \nI'd like to check availability for a transfer to *${destino}* on *${fechaFormateada}*. We are *${personas}* passengers. \nCould you please send me a quote?`
+      : `Hola Remis El Chino! 👋 Mi nombre es *${nombre}*. \nMe gustaría consultar la disponibilidad para un traslado a *${destino}* para el día *${fechaFormateada}*. Seríamos *${personas}* pasajeros. \n¿Podrían pasarme el presupuesto?`;
     
     const url = `https://wa.me/${tel}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
