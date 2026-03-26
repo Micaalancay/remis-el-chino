@@ -21,7 +21,10 @@ const t = {
             {lang === 'es' ? item.es : item.en}
           </h4>
           <p class="text-3xl font-black text-slate-900 group-hover:text-orange-500 my-4">
-            {item.precio}
+            {item.precio === "Consultar" 
+                ? (lang === 'es' ? 'Consultar' : 'Inquire') 
+                : item.precio
+              }
           </p>
           <p class="text-xs text-slate-400 font-bold uppercase mb-6">
             {lang === 'es' ? item.nota_es : item.nota_en}

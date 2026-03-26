@@ -47,8 +47,10 @@
     "salinas": {
       "precio": "$100.000",
       "pax": "4",
-      "salida": "Mañana o Tarde",
-      "duracion": "4 horas",
+      "salida_es": "Mañana o Tarde",
+      "salida_en": "Morning or Afternoon",
+      "duracion_es": "4 horas",
+      "duracion_en": "4 hours",
       "es": {
         "titulo": "Purmamarca a Salinas Grandes",
         "tag": "Espejos de sal y Puna",
