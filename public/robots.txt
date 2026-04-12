@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # El sitemap correcto de este proyecto
-Sitemap: https://www.remiselchino.com.ar/sitemap-index.xml
+Sitemap: https://remiselchino.com.ar/sitemap-index.xml
