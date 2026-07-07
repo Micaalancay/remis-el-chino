@@ -1,6 +1,6 @@
 ---
 import data from '../data/contenido.json';
-const { lang } = Astro.props;
+const lang = (Astro.props.lang || 'es') as 'es' | 'en';
 
 const capacidades = [4, 6, 13, 15];
 ---

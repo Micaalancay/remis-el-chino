@@ -1,6 +1,6 @@
 ---
 import data from '../data/contenido.json';
-const { lang = 'es' } = Astro.props;
+const lang = (Astro.props.lang || 'es') as 'es' | 'en';
 
 const t = {
   es: { title: "Otros Traslados", contact: "Consultar presupuesto" },

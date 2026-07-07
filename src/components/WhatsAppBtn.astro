@@ -1,6 +1,6 @@
 ---
 // src/components/WhatsAppBtn.astro
-const { lang = 'es' } = Astro.props;
+const lang = (Astro.props.lang || 'es') as 'es' | 'en';
 
 const phone = "5493884153744"; 
 

@@ -1,5 +1,5 @@
 ---
-const { lang = 'es' } = Astro.props;
+const lang = (Astro.props.lang || 'es') as 'es' | 'en';
 
 // 1. Agregamos el array de fotos (podés mover esto al JSON después)
 const fotos = [

@@ -1,6 +1,6 @@
 ---
 // src/components/Formulario.astro
-const { lang = 'es' } = Astro.props;
+const lang = (Astro.props.lang || 'es') as 'es' | 'en';
 
 // Traducciones de la interfaz
 const t = {
