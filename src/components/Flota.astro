@@ -1,0 +1,30 @@
+---
+import data from '../data/contenido.json';
+const { lang } = Astro.props;
+
+const capacidades = [4, 6, 13, 15];
+---
+
+<section class="py-16 bg-gradient-to-b from-slate-900 to-[#0b1120] rounded-3xl border border-white/5 my-12 p-8 text-center shadow-2xl relative overflow-hidden" id="flota">
+  <!-- Detalle de luz de fondo sutil -->
+  <div class="absolute -top-24 -left-24 w-48 h-48 bg-orange-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  
+  <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-3">
+    {data.flota?.[`titulo_${lang}`] || "Nuestra Flota"}
+  </h2>
+  <p class="text-sm md:text-base text-slate-300 max-w-xl mx-auto mb-10 leading-relaxed">
+    {data.flota?.[`descripcion_${lang}`] || "Contamos con vehículos modernos y habilitados con capacidad para 4, 6, 13 y 15 personas."}
+  </p>
+
+  <!-- Grid de capacidades -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+    {capacidades.map(num => (
+      <div class="bg-slate-900/80 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center transition-all duration-300 hover:border-orange-500 hover:bg-slate-800/80 hover:-translate-y-1 group shadow-lg">
+        <span class="text-4xl font-black text-orange-500 transition-transform group-hover:scale-110 duration-300">{num}</span>
+        <span class="text-[11px] uppercase font-bold tracking-widest text-slate-400 mt-2 transition-colors group-hover:text-white">
+          {lang === 'es' ? 'Pasajeros' : 'Passengers'}
+        </span>
+      </div>
+    ))}
+  </div>
+</section>

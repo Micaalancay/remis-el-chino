@@ -88,5 +88,10 @@
       "es": { "q": "¿El servicio es privado o compartido?", "a": "Todos nuestros servicios son exclusivamente privados, garantizando tu comodidad." },
       "en": { "q": "Private or shared service?", "a": "All our services are exclusively private, guaranteeing your comfort." }
     }
-  ]
+  ],"flota": {
+  "titulo_es": "Nuestra Flota",
+  "titulo_en": "Our Fleet",
+  "descripcion_es": "Contamos con vehículos modernos y habilitados con capacidad para 4, 6, 13 y 15 personas, adaptándonos a las necesidades de tu grupo.",
+  "descripcion_en": "We have modern, fully authorized vehicles with capacity for 4, 6, 13, and 15 people, adapting perfectly to your group's needs."
+}
 }

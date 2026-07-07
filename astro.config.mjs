@@ -5,7 +5,7 @@ export default defineConfig({
 
   site: 'https://remiselchino.com.ar',
   integrations: [sitemap()],
-  // Mantenemos tu configuración de Tailwind 4
+
   vite: {
     plugins: [tailwindcss()],
   },

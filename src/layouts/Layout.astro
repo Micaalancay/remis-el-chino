@@ -4,7 +4,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   lang?: string;
-  description?: string; // Agregamos descripción opcional por página
+  description?: string;
 }
 
 const { 
@@ -15,7 +15,12 @@ const {
     : "Private transfers in Purmamarca and Jujuy. Trips to the Airport, Salinas Grandes and Hornocal. Safety and punctuality in Northern Argentina."
 } = Astro.props;
 
-const siteUrl = "https://www.remiselchino.com.ar"; // Asegurate de usar el www si así lo configuramos
+//  ARREGLADO: Unificado SIN 'www' para coincidir al 100% con astro.config y robots.txt
+const baseUrl = "https://remiselchino.com.ar"; 
+
+// DINÁMICO: Detecta la ruta actual para armar la URL canónica perfecta
+const pathname = Astro.url.pathname;
+const canonicalUrl = `${baseUrl}${pathname}`;
 ---
 
 <!doctype html>
@@ -31,14 +36,15 @@ const siteUrl = "https://www.remiselchino.com.ar"; // Asegurate de usar el www s
     <meta name="keywords" content="remis purmamarca, remis jujuy, traslados purmamarca, excursiones hornocal, salinas grandes remis, transfer aeropuerto jujuy, taxi purmamarca" />
     
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteUrl}/og-image.jpg`} /> 
+    <meta property="og:image" content={`${baseUrl}/og-image.jpg`} /> 
     
-    <link rel="canonical" href={siteUrl} />
+    <!-- 🚀 CORREGIDO: Canónica dinámica para evitar errores de duplicados en Google -->
+    <link rel="canonical" href={canonicalUrl} />
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline define:vars={{ baseUrl }}>
       {
         "@context": "https://schema.org",
         "@type": "TaxiService",
@@ -56,7 +62,7 @@ const siteUrl = "https://www.remiselchino.com.ar"; // Asegurate de usar el www s
           "telephone": "+549388154153744"
         },
         "areaServed": ["Purmamarca", "Jujuy", "Salta", "Tilcara", "Humahuaca"],
-        "url": "https://www.remiselchino.com.ar"
+        "url": "https://remiselchino.com.ar"
       }
     </script>
   </head>

@@ -7,25 +7,23 @@ const t = {
     location: "Jujuy · Argentina",
     base: "Desde Purmamarca",
     brand: "Remis El Chino",
-    title_white: "Tu viaje al Norte,",
-    title_orange: "sin preocupaciones.",
     description: "Traslados privados y excursiones personalizadas.",
     call_label: "O llamanos directamente:",
     phone: "388 15-415-3744", 
     btn_primary: "Ver Excursiones",
-    btn_secondary: "Precios de Traslados"
+    btn_secondary: "Precios de Traslados",
+    btn_fleet: "Ver Flota" // <-- Agregado Español
   },
   en: {
     location: "Jujuy · Argentina",
     base: "From Purmamarca",
     brand: "Remis El Chino",
-    title_white: "Your trip to the North,",
-    title_orange: "stress-free.",
     description: "Private transfers and customized excursions.",
     call_label: "Or call us directly:",
     phone: "388 15-415-3744",
     btn_primary: "View Excursions",
-    btn_secondary: "Transfer Rates"
+    btn_secondary: "Transfer Rates",
+    btn_fleet: "Our Fleet" // <-- Agregado Inglés
   }
 }[lang];
 ---
@@ -52,27 +50,29 @@ const t = {
       </span>
     </div>
 
-   <!--  <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-[1] md:leading-[0.9] tracking-tighter break-words px-2">
-      {t.title_white} <br class="hidden sm:block"/> 
-      <span class="text-orange-500 italic block sm:inline">{t.title_orange}</span>
-    </h1>-->
-
     <p class="text-base md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium opacity-80 px-2">
       {t.description}
     </p>
 
     <div class="flex flex-col items-center gap-10">
       
-      <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 w-full px-4">
+      <!-- Fila de Botones: ahora con un grid para soportar los 3 botones limpios -->
+      <div class="grid grid-cols-1 sm:flex sm:flex-row justify-center gap-4 md:gap-4 w-full max-w-4xl px-4">
         <a href="#excursiones" 
-           class="group relative bg-orange-600 hover:bg-orange-500 text-white font-black py-4 md:py-5 px-8 md:px-10 rounded-2xl transition-all shadow-2xl shadow-orange-900/40 overflow-hidden w-full sm:w-auto text-center">
-          <span class="relative z-10 uppercase tracking-widest text-xs md:text-sm">{t.btn_primary}</span>
+           class="group relative bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-6 rounded-2xl transition-all shadow-2xl shadow-orange-900/40 overflow-hidden text-center flex items-center justify-center min-w-[180px]">
+          <span class="relative z-10 uppercase tracking-widest text-xs">{t.btn_primary}</span>
           <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
         </a>
 
         <a href="#traslados" 
-           class="bg-slate-800 hover:bg-slate-700 text-white border border-white/10 font-black py-4 md:py-5 px-8 md:px-10 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-xs md:text-sm w-full sm:w-auto text-center">
+           class="bg-slate-800 hover:bg-slate-700 text-white border border-white/10 font-black py-4 px-6 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-xs text-center flex items-center justify-center min-w-[180px]">
           {t.btn_secondary}
+        </a>
+
+        <!-- 🚀 NUEVO BOTÓN FLOTA -->
+        <a href="#flota" 
+           class="bg-slate-800/40 hover:bg-slate-700 text-slate-300 hover:text-white border border-white/5 font-black py-4 px-6 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-xs text-center flex items-center justify-center min-w-[180px] hover:border-orange-500/30">
+          {t.btn_fleet}
         </a>
       </div>
 
@@ -94,20 +94,3 @@ const t = {
 
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
 </section>
-
-<style>
-  h1, .text-orange-600, .text-orange-500 {
-    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-  @keyframes slideUp {
-    from { 
-      opacity: 0; 
-      transform: translateY(40px); 
-    }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
-    }
-  }
-</style>
