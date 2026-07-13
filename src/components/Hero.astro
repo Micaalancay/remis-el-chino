@@ -10,6 +10,7 @@ const t = {
     description: "Traslados privados y excursiones personalizadas.",
     call_label: "O llamanos directamente:",
     phone: "388 15-415-3744", 
+    phone_2: "388 15-460-9442", 
     btn_primary: "Ver Excursiones",
     btn_secondary: "Precios de Traslados",
     btn_fleet: "Nuestra Flota" 
@@ -21,6 +22,7 @@ const t = {
     description: "Private transfers and customized excursions.",
     call_label: "Or call us directly:",
     phone: "388 15-415-3744",
+    phone_2: "388 15-460-9442", 
     btn_primary: "View Excursions",
     btn_secondary: "Transfer Rates",
     btn_fleet: "Our Fleet" 
@@ -54,9 +56,9 @@ const t = {
       {t.description}
     </p>
 
-    <div class="flex flex-col items-center gap-10">
+    <div class="flex flex-col items-center gap-10 w-full">
       
-      <!-- Fila de Botones: ahora con un grid para soportar los 3 botones limpios -->
+      <!-- Fila de Botones -->
       <div class="grid grid-cols-1 sm:flex sm:flex-row justify-center gap-4 md:gap-4 w-full max-w-4xl px-4">
         <a href="#excursiones" 
            class="group relative bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-6 rounded-2xl transition-all shadow-2xl shadow-orange-900/40 overflow-hidden text-center flex items-center justify-center min-w-[180px]">
@@ -69,24 +71,40 @@ const t = {
           {t.btn_secondary}
         </a>
 
-        <!-- 🚀 NUEVO BOTÓN FLOTA -->
         <a href="#flota" 
            class="bg-slate-800/40 hover:bg-slate-700 text-slate-300 hover:text-white border border-white/5 font-black py-4 px-6 rounded-2xl transition-all backdrop-blur-sm uppercase tracking-widest text-xs text-center flex items-center justify-center min-w-[180px] hover:border-orange-500/30">
           {t.btn_fleet}
         </a>
       </div>
 
-      <div class="flex flex-col items-center gap-3">
+      <!-- Sección de llamadas -->
+      <div class="flex flex-col items-center gap-4 w-full">
         <p class="text-slate-400 uppercase tracking-[0.2em] text-[10px] md:text-xs font-bold opacity-70">
           {t.call_label}
         </p>
-        <a href={`tel:${t.phone.replace(/\s|-/g, '')}`} 
-           class="flex items-center gap-3 text-white hover:text-orange-500 transition-all group">
-          <div class="bg-orange-600 p-3 rounded-xl group-hover:scale-110 transition-transform shadow-lg shadow-orange-600/20">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <span class="text-3xl md:text-5xl font-black tracking-tighter tabular-nums">{t.phone}</span>
-        </a>
+        
+        <!-- Contenedor adaptativo: fila en pantallas grandes, columna en móviles -->
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 w-full px-4">
+          
+          <!-- Teléfono 1 -->
+          <a href={`tel:${t.phone.replace(/\s|-/g, '')}`} 
+             class="flex items-center gap-3 text-white hover:text-orange-500 transition-all group">
+            <div class="bg-orange-600 p-3 rounded-xl group-hover:scale-110 transition-transform shadow-lg shadow-orange-600/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="text-3xl md:text-5xl font-black tracking-tighter tabular-nums">{t.phone}</span>
+          </a>
+
+          <!-- Teléfono 2 -->
+          <a href={`tel:${t.phone_2.replace(/\s|-/g, '')}`} 
+             class="flex items-center gap-3 text-white hover:text-orange-500 transition-all group">
+            <div class="bg-orange-600 p-3 rounded-xl group-hover:scale-110 transition-transform shadow-lg shadow-orange-600/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="text-3xl md:text-5xl font-black tracking-tighter tabular-nums">{t.phone_2}</span>
+          </a>
+
+        </div>
       </div>
 
     </div>
