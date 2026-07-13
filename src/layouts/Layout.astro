@@ -15,7 +15,7 @@ const {
     : "Private transfers in Purmamarca and Jujuy. Trips to the Airport, Salinas Grandes and Hornocal. Safety and punctuality in Northern Argentina."
 } = Astro.props;
 
-//  ARREGLADO: Unificado SIN 'www' para coincidir al 100% con astro.config y robots.txt
+//  ARREGLADO: Se define la URL base del sitio web para construir la URL canónica correctamente
 const baseUrl = "https://remiselchino.com.ar"; 
 
 // DINÁMICO: Detecta la ruta actual para armar la URL canónica perfecta
@@ -41,7 +41,7 @@ const canonicalUrl = `${baseUrl}${pathname}`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${baseUrl}/og-image.jpg`} /> 
     
-    <!-- 🚀 CORREGIDO: Canónica dinámica para evitar errores de duplicados en Google -->
+    <!-- CORREGIDO: Canónica dinámica para evitar errores de duplicados en Google -->
     <link rel="canonical" href={canonicalUrl} />
 
     <script type="application/ld+json" is:inline define:vars={{ baseUrl }}>
@@ -61,7 +61,13 @@ const canonicalUrl = `${baseUrl}${pathname}`;
           },
           "telephone": "+549388154153744"
         },
-        "areaServed": ["Purmamarca", "Jujuy", "Salta", "Tilcara", "Humahuaca"],
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Purmamarca" },
+          { "@type": "AdministrativeArea", "name": "Jujuy" },
+          { "@type": "AdministrativeArea", "name": "Salta" },
+          { "@type": "AdministrativeArea", "name": "Tilcara" },
+          { "@type": "AdministrativeArea", "name": "Humahuaca" }
+        ],
         "url": "https://remiselchino.com.ar"
       }
     </script>
