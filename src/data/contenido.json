@@ -1,11 +1,11 @@
 {
   "traslados": [
-  { "id": "PUR", "es": "Purmamarca ↔ Jujuy Capital", "en": "Purmamarca ↔ Jujuy City", "precio": "$75.000", "nota_es": "Servicio Puerta a Puerta", "nota_en": "Door to door" },
-  { "id": "JUJ", "es": "Purmamarca ↔ Aeropuerto Jujuy", "en": "Purmamarca ↔ Jujuy Airport", "precio": "$90.000", "nota_es": "Traslado Directo", "nota_en": "Direct Transfer" },
+  { "id": "PUR", "es": "Purmamarca ↔ Jujuy Capital", "en": "Purmamarca ↔ Jujuy City", "precio": "$75.000 ARS", "nota_es": "Servicio Puerta a Puerta", "nota_en": "Door to door" },
+  { "id": "JUJ", "es": "Purmamarca ↔ Aeropuerto Jujuy", "en": "Purmamarca ↔ Jujuy Airport", "precio": "$90.000 ARS", "nota_es": "Traslado Directo", "nota_en": "Direct Transfer" },
   { "id": "TIL", "es": "Purmamarca ↔ Tilcara", "en": "Purmamarca ↔ Tilcara", "precio": "$40.000", "nota_es": "Corazón de la Quebrada", "nota_en": "Heart of the Valley" },
-  { "id": "MAI", "es": "Purmamarca ↔ Maimará", "en": "Purmamarca ↔ Maimará", "precio": "$35.000", "nota_es": "Traslado rápido", "nota_en": "Quick transfer" },
-  { "id": "VOL", "es": "Purmamarca ↔ Volcán", "en": "Purmamarca ↔ Volcán", "precio": "$40.000", "nota_es": "Portal de la Quebrada", "nota_en": "Gateway to the Valley" },
-  { "id": "TUM", "es": "Purmamarca ↔ Tumbaya", "en": "Purmamarca ↔ Tumbaya", "precio": "$35.000", "nota_es": "Traslado directo", "nota_en": "Direct transfer" },
+  { "id": "MAI", "es": "Purmamarca ↔ Maimará", "en": "Purmamarca ↔ Maimará", "precio": "$35.000 ARS", "nota_es": "Traslado rápido", "nota_en": "Quick transfer" },
+  { "id": "VOL", "es": "Purmamarca ↔ Volcán", "en": "Purmamarca ↔ Volcán", "precio": "$40.000 ARS", "nota_es": "Portal de la Quebrada", "nota_en": "Gateway to the Valley" },
+  { "id": "TUM", "es": "Purmamarca ↔ Tumbaya", "en": "Purmamarca ↔ Tumbaya", "precio": "$35.000 ARS", "nota_es": "Traslado directo", "nota_en": "Direct transfer" },
   { "id": "CAP", "es": "Purmamarca ↔ Salta Capital", "en": "Purmamarca ↔ Salta City", "precio": "Consultar", "nota_es": "Centro / Hoteles", "nota_en": "Downtown / Hotels" },
   { "id": "SLA", "es": "Purmamarca ↔ Aeropuerto Salta", "en": "Purmamarca ↔ Salta Airport", "precio": "Consultar", "nota_es": "Servicio 24hs", "nota_en": "24/7 Service" },
   { "id": "JAM", "es": "Paso de Jama", "en": "Paso de Jama", "precio": "Consultar", "nota_es": "Frontera Chile", "nota_en": "Chile Border" },
@@ -46,7 +46,7 @@
       }
     },
     "salinas": {
-      "precio": "$100.000 ",
+      "precio": "$100.000 ARS",
       "pax": "4",
       "salida_es": "Mañana o Tarde",
       "salida_en": "Morning or Afternoon",
