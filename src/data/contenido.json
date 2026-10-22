@@ -13,7 +13,7 @@
 ],
   "excursiones": {
     "hornocal": {
-      "precio": "$280.000",
+      "precio": "$300.000 ARS",
       "pax": "4",
       "salida": "08:30 hs",
       "regreso": "17:30 hs",
@@ -46,7 +46,7 @@
       }
     },
     "salinas": {
-      "precio": "$100.000",
+      "precio": "$100.000 ",
       "pax": "4",
       "salida_es": "Mañana o Tarde",
       "salida_en": "Morning or Afternoon",
